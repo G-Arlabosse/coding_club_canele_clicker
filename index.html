@@ -10,9 +10,9 @@
         <h1>Canelé Clicker</h1>
         <img src="Canele-de-Bordeau.png"/><br/><br/>
         Vous avez <span id="nbCanelés">0</span> canelés<br/><br/>
-        <button onclick="Click();enableOven()">Cuisiner un canelé</button>
-        <button id="Four" onclick="buyOven()">Acheter un four</button>
-        <button id="Employé">Payer un employé</button>
+        <button onclick="Click();enableBtns();Auto()">Cuisiner un canelé</button>
+        <button id="Four" onclick="buyOven();refreshBtn()">Acheter un four</button>
+        <button id="Employé" onclick="payEmployee();refreshBtn()">Payer un employé</button>
         <script language = "JavaScript" src="script.js"> </script>
     </body>
 </html>
