@@ -1,6 +1,7 @@
 html{
     background-color: lightgray;
     font-family: "Neucha", cursive;
+    text-align: center;
 }
 
 h1{
@@ -9,7 +10,7 @@ h1{
 }
 
 img{
-    width: 100%;
+    text-align:center
 }
 
 span{
@@ -18,4 +19,8 @@ span{
 
 button{
     font-family: "Neucha", cursive;
+}
+
+.NombreCanelés{
+    font-size: 1.4em;
 }

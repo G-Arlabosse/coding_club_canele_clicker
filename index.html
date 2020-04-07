@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>La boulangerie</title>
+        <title>La Giboulangerie</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="style.css"/>
         <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -9,10 +9,10 @@
     <body>
         <h1>Canelé Clicker</h1>
         <img src="Canele-de-Bordeau.png"/><br/><br/>
-        Vous avez <span id="nbCanelés">0</span> canelés<br/><br/>
-        <button onclick="Click();enableBtns();Auto()">Cuisiner un canelé</button>
-        <button id="Four" onclick="buyOven();refreshBtn()">Acheter un four</button>
-        <button id="Employé" onclick="payEmployee();refreshBtn()">Payer un employé</button>
+        <p class="NombreCanelés">Vous avez <span id="nbCanelés">0</span> canelés</p><br/>
+        <button onclick="Click();Auto()">Cuisiner un canelé</button><p>Chaque click rapporte <span id="prodCan"></span> canelés.</p><br/>
+        <button id="Four" onclick="buyOven();refreshBtn()">Acheter un four</button><p>+1 Canelés/Clic. Prix : <span id="PrixFour"></span> canelés</p><br/>
+        <button id="Employé" onclick="payEmployee();refreshBtn()">Payer un employé</button><p>+1 Canelés/Seconde. Prix : <span id="PrixEmployé"></span> canelés</p><br/>
         <script language = "JavaScript" src="script.js"> </script>
     </body>
 </html>
