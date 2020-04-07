@@ -1,5 +1,6 @@
 html{
     background-color: lightgray;
+    font-family: "Neucha", cursive;
 }
 
 h1{
@@ -7,3 +8,14 @@ h1{
     color: #5f021f
 }
 
+img{
+    width: 100%;
+}
+
+span{
+    color: #a47;
+}
+
+button{
+    font-family: "Neucha", cursive;
+}
