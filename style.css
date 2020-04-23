@@ -4,13 +4,32 @@ html{
     text-align: center;
 }
 
+#Canelés{
+    background-color: black;
+    width: 54%;
+    min-height: 70%;
+    float: left;
+}
+
+#Buildings{
+    background-color: gray;
+    width: 44%;
+    float: top;
+    float: right;
+    min-height: 100%;
+}
+
+#Upgrades{
+    background-color: white;
+    width: 55%;
+    display: block;
+    top: 70%;
+    min-height: 30%;
+}
+
 h1{
     font-family: "Pacifico", cursive;
     color: #5f021f
-}
-
-img{
-    text-align:center
 }
 
 span{

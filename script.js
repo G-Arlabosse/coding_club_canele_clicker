@@ -18,7 +18,6 @@ CPC.innerHTML=1+fours;
 
 function Click(){
     can+=1+fours;
-    strCan= toString(can);
     showCan.innerHTML=can;
     refreshBtn();
 }

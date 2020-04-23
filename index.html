@@ -7,12 +7,15 @@
         <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
     </head>
     <body>
+        <div id="Canelés"></div>
+        <div id="Buildings"></div>
+        <div id="Upgrades"></div>
         <h1>Canelé Clicker</h1>
         <img src="Canele-de-Bordeau.png"/><br/><br/>
         <p class="NombreCanelés">Vous avez <span id="nbCanelés">0</span> canelés</p><br/>
-        <button onclick="Click();Auto()">Cuisiner un canelé</button><p>Chaque click rapporte <span id="prodCan"></span> canelés.</p><br/>
-        <button id="Four" onclick="buyOven();refreshBtn()">Acheter un four</button><p>+1 Canelés/Clic. Prix : <span id="PrixFour"></span> canelés</p><br/>
-        <button id="Employé" onclick="payEmployee();refreshBtn()">Payer un employé</button><p>+1 Canelés/Seconde. Prix : <span id="PrixEmployé"></span> canelés</p><br/>
+        <button onclick="Click()">Cuisiner un canelé</button><p>Chaque click rapporte <span id="prodCan"></span> canelés.</p><br/>
+        <button id="Four" onclick="buyOven();refreshBtn()">Acheter un four</button><p>+1 Canelé/Clic. Prix : <span id="PrixFour"></span> canelés</p><br/>
+        <button id="Employé" onclick="payEmployee();refreshBtn()">Payer un employé</button><p>+1 Canelé/Seconde. Prix : <span id="PrixEmployé"></span> canelés</p><br/>
         <script language = "JavaScript" src="script.js"> </script>
     </body>
 </html>
