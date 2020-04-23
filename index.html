@@ -1,16 +1,36 @@
 <html>
     <head>
-        <title>La Giboulangerie</title>
         <meta charset="utf-8">
+
+        <title>La Giboulangerie</title>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css"/>
+
         <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div id="Canelés"></div>
-        <div id="Buildings"></div>
-        <div id="Upgrades"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <div class="caneles">
+                        <h2>Caneles</h2></h2>
+                    </div>
+                    <div class="upgrades">
+                        <h2>Upgrades</h2>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="buildings">
+                        <h2>Buildings</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <h1>Canelé Clicker</h1>
+
         <img src="Canele-de-Bordeau.png"/><br/><br/>
         <p class="NombreCanelés">Vous avez <span id="nbCanelés">0</span> canelés</p><br/>
         <button onclick="Click()">Cuisiner un canelé</button><p>Chaque click rapporte <span id="prodCan"></span> canelés.</p><br/>
