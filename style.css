@@ -1,26 +1,26 @@
-html{
-    background-color: lightgray !important;
-    font-family: "Neucha", cursive !important;
-    text-align: center !important;
+body {
+    background-color: lightgray;
+    font-family: "Neucha", cursive ;
+    text-align: center;
 }
 
 .caneles{
     background-color: black;
-    width: 54% !important;
-    min-height: 70% !important;
+    width: 100%;
+    min-height: 70%;
 }
 
 .buildings{
     background-color: gray;
-    width: 44% !important;
-    min-height: 100% !important;
+    width: 100%;
+    min-height: 100%;
 }
 
 .upgrades{
     background-color: white;
-    width: 54% !important;
-    min-height: 30% !important;
-    margin-top: 2% !important;
+    width: 100%;
+    min-height: 30%;
+    margin-top: 2% ;
 }
 
 h1{
