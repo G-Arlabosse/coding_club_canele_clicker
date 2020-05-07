@@ -3,28 +3,42 @@ var fours = 0;
 var prixFour = 25;
 var prixUFour = 200;
 var ShowPrixFour = document.getElementById("PrixFour");
-var ShowPrixUfour = document.getElementById("PrixUfour");
-var Ufour=1;
+var ShowPrixUFour = document.getElementById("PrixUFour");
+var UFour=1;
 var btnFour = document.getElementById("Four");
-var btnUFour = document.getElementById("Ufour");
+var btnUFour = document.getElementById("UFour");
 btnFour.disabled = true;
 btnUFour.disabled = true;
 ShowPrixFour.innerHTML=prixFour;
-ShowPrixUfour.innerHTML=prixUFour;
+ShowPrixUFour.innerHTML=prixUFour;
 // ----- Déclaration des variables des employés -----
 var employé = 0;
 var prixEmployé = 100;
 var prixUEmployé = 1000;
 var ShowPrixEmployé = document.getElementById("PrixEmployé");
-var ShowPrixUemployé = document.getElementById("PrixUemployé");
+var ShowPrixUEmployé = document.getElementById("PrixUEmployé");
 var CPSemployé=1;
-var Uemployé=1;
+var UEmployé=1;
 var btnEmployé = document.getElementById("Employé");
-var btnUEmployé = document.getElementById("Uemployé");
+var btnUEmployé = document.getElementById("UEmployé");
 btnEmployé.disabled = true;
 btnUEmployé.disabled = true;
 ShowPrixEmployé.innerHTML=prixEmployé;
-ShowPrixUemployé.innerHTML=prixUEmployé;
+ShowPrixUEmployé.innerHTML=prixUEmployé;
+// ----- Déclaration des variables des robots -----
+var robots = 0;
+var prixRobot = 900;
+var prixURobot = 11000;
+var ShowPrixRobot = document.getElementById("PrixRobot");
+var ShowPrixURobot = document.getElementById("PrixURobot");
+var CPSrobot=7;
+var Urobot=1;
+var btnRobot = document.getElementById("Robot");
+var btnURobot = document.getElementById("URobot");
+btnRobot.disabled = true;
+btnURobot.disabled = true;
+ShowPrixRobot.innerHTML=prixRobot;
+ShowPrixURobot.innerHTML=prixURobot;
 // ----- Déclaration des autres variable du jeu -----
 var can = 0;
 var ShowCan = document.getElementById("nbCanelés");
@@ -35,16 +49,16 @@ CPC.innerHTML=1+fours;
 
 
 function Click(){
-    can+=1+fours*Ufour;
-    showCan.innerHTML=can;
+    can+=1+fours*UFour;
+    ShowCan.innerHTML=can;
     refreshBtn();
 }
 
 setInterval(Auto, 1000);
 function Auto(){
-    can+=employé*Uemployé;
-    showCan.innerHTML=can;
-    ShowCPS.innerHTML=employé*Uemployé;
+    can+=employé*UEmployé;
+    ShowCan.innerHTML=can;
+    ShowCPS.innerHTML=employé*UEmployé;
     refreshBtn();
 }
 
@@ -52,10 +66,10 @@ function Auto(){
 function buyOven(){
     can-=prixFour;
     fours+=1;
-    prixFour=Math.round(prixFour*1.15);
+    prixFour=Math.round(prixFour*1.3);
     ShowCan.innerHTML=can;
     ShowPrixFour.innerHTML=prixFour;
-    CPC.innerHTML=1+fours*Ufour;
+    CPC.innerHTML=1+fours*UFour;
 }
 
 function payEmployee(){
@@ -66,21 +80,37 @@ function payEmployee(){
     ShowPrixEmployé.innerHTML=prixEmployé;
 }
 
+function buyRobot(){
+    can-=prixRobot;
+    robot+=1;
+    prixRobot=Math.round(prixRobot*1.15);
+    ShowCan.innerHTML=can;
+    ShowPrixRobot.innerHTML=prixRobot;
+}
+
 function BuyUFour(){
-    Ufour*=2;
+    UFour*=2;
     can-=prixUFour;
     prixUFour=Math.round(prixUFour*8);
     ShowCan.innerHTML=can;
-    ShowPrixUfour.innerHTML=prixUFour;
-    CPC.innerHTML=1+fours*Ufour;
+    ShowPrixUFour.innerHTML=prixUFour;
+    CPC.innerHTML=1+fours*UFour;
 }
 
 function BuyUEmployé(){
-    Uemployé*=2;
+    UEmployé*=2;
     can-=prixUEmployé;
     prixUEmployé=Math.round(prixUEmployé*8);
     ShowCan.innerHTML=can;
-    ShowPrixUemployé.innerHTML=prixUEmployé;
+    ShowPrixUEmployé.innerHTML=prixUEmployé;
+}
+
+function BuyUEmployé(){
+    URobot*=2;
+    can-=prixURobot;
+    prixURobot=Math.round(prixURobot*8);
+    ShowCan.innerHTML=can;
+    ShowPrixURobot.innerHTML=prixURobot;
 }
 
 function refreshBtn(){
@@ -96,6 +126,12 @@ function refreshBtn(){
     else{
         btnEmployé.disabled = false;
     }
+    if (can<prixRobot){
+        btnRobot.disabled = true;
+    }
+    else{
+        btnRobot.disabled = false;
+    }
     if (can<prixUFour){
         btnUFour.disabled = true;
     }
@@ -107,5 +143,11 @@ function refreshBtn(){
     }
     else{
         btnUEmployé.disabled = false;
+    }
+    if (can<prixURobot){
+        btnURobot.disabled = true;
+    }
+    else{
+        btnURobot.disabled = false;
     }
 }

@@ -34,12 +34,19 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <button id="Four" onclick="buyOven();refreshBtn()" class="btn btn-info">Acheter un four</button>
-                                <p class="info">+1 Canelé/Clic. Prix : <span id="PrixFour"></span> canelés</p><br/>
+                                <p class="info">Prix : <span id="PrixFour"></span> canelés</p><br/>
                             </div>
             
                             <div class="col-md-6">
                                 <button id="Employé" onclick="payEmployee();refreshBtn()" class="btn btn-info">Payer un employé</button>
-                                <p class="info">+1 Canelé/Seconde. Prix : <span id="PrixEmployé"></span> canelés</p><br/>
+                                <p class="info">Prix : <span id="PrixEmployé"></span> canelés</p><br/>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button id="Robot" onclick="buyOven();refreshBtn()" class="btn btn-info">Acheter un robot</button>
+                                <p class="info">Prix : <span id="PrixRobot"></span> canelés</p><br/>
                             </div>
                         </div>
                     </div>
@@ -50,13 +57,18 @@
                     <h2>Upgrades</h2><br/>
                     <div class="row">
                         <div class="col-md-2">
-                            <button id="Ufour" onclick="BuyUFour();refreshBtn()" class="btn btn-info">Améliorer les fours (Production x2)</button>
-                            <p class="info">Prix : <span id="PrixUfour"></span> canelés</p><br/>
+                            <button id="UFour" onclick="BuyUFour();refreshBtn()" class="btn btn-info">Améliorer les fours (Production x2)</button>
+                            <p class="info">Prix : <span id="PrixUFour"></span> canelés</p><br/>
                         </div>
                         
                         <div class="col-md-2">
-                            <button id="Uemployé" onclick="BuyUEmployé();refreshBtn()" class="btn btn-info">Améliorer les employés (Production x2)</button>
-                            <p class="info">Prix : <span id="PrixUemployé"></span> canelés</p><br/>
+                            <button id="UEmployé" onclick="BuyUEmployé();refreshBtn()" class="btn btn-info">Améliorer les employés (Production x2)</button>
+                            <p class="info">Prix : <span id="PrixUEmployé"></span> canelés</p><br/>
+                        </div>
+
+                        <div class="col-md-2">
+                            <button id="URobot" onclick="BuyUEmployé();refreshBtn()" class="btn btn-info">Améliorer les robots (Production x2)</button>
+                            <p class="info">Prix : <span id="PrixURobot"></span> canelés</p><br/>
                         </div>
                     </div>
                 </div>
