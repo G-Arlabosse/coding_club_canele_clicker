@@ -1,8 +1,3 @@
-var can = 0;
-var ShowCan = document.getElementById("nbCanelés");
-var CPC = document.getElementById("prodCan");
-var ShowCPS = document.getElementById("CPS");
-CPC.innerHTML=1+fours;
 // ----- Déclaration des variables des fours -----
 var fours = 0;
 var prixFour = 25;
@@ -30,21 +25,26 @@ btnEmployé.disabled = true;
 btnUEmployé.disabled = true;
 ShowPrixEmployé.innerHTML=prixEmployé;
 ShowPrixUemployé.innerHTML=prixUEmployé;
+// ----- Déclaration des autres variable du jeu -----
+var can = 0;
+var ShowCan = document.getElementById("nbCanelés");
+var CPC = document.getElementById("prodCan");
+var ShowCPS = document.getElementById("CPS");
+CPC.innerHTML=1+fours;
 
 
 
 function Click(){
     can+=1+fours*Ufour;
-    ShowCan.innerHTML=can;
+    showCan.innerHTML=can;
     refreshBtn();
 }
 
 setInterval(Auto, 1000);
 function Auto(){
     can+=employé*Uemployé;
-    ShowCan.innerHTML=can;
-    if (employé*Uemployé == 0){ ShowCPS.innerHTML=0; }
-    else{ ShowCPS.innerHTML = employé*Uemployé;}
+    showCan.innerHTML=can;
+    ShowCPS.innerHTML=employé*Uemployé;
     refreshBtn();
 }
 
