@@ -10,48 +10,59 @@
         <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
     </head>
-    <body>
-        <div class="container">
+    <body>            
+        <h1>Canelé Clicker</h1>
             <div class="row">
                 <div class="col-md-6">
                     <div class="caneles">
-                        <h2>Caneles</h2></h2>
-                    </div>
-                    <div class="upgrades">
-                        <h2>Upgrades</h2>
+                        <h2>Caneles</h2>
+                        <p class="NombreCanelés">Vous avez <span id="nbCanelés">0</span> canelés</p>            
+                        <div class="mt-3">
+                            <img src="Canele.png" onclick="Click()"/><br/><br/>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="info">Chaque click rapporte <span id="prodCan"></span> canelés</p><br/>
+                                <p class="info">Vous produisez <span id="CPS">0</span> canelés par seconde</p><br/>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="buildings">
-                        <h2>Buildings</h2>
+                        <h2>Buildings</h2><br/>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button id="Four" onclick="buyOven();refreshBtn()" class="btn btn-info">Acheter un four</button>
+                                <p class="info">+1 Canelé/Clic. Prix : <span id="PrixFour"></span> canelés</p><br/>
+                            </div>
+            
+                            <div class="col-md-6">
+                                <button id="Employé" onclick="payEmployee();refreshBtn()" class="btn btn-info">Payer un employé</button>
+                                <p class="info">+1 Canelé/Seconde. Prix : <span id="PrixEmployé"></span> canelés</p><br/>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12">
-                    <h1>Canelé Clicker</h1>
-                    <div class="mt-3">
-                        <img src="Canele-de-Bordeau.png"/><br/><br/>
-                    </div>
-                    <p class="NombreCanelés">Vous avez <span id="nbCanelés">0</span> canelés</p><br/>
-
+                <div class="upgrades">
+                    <h2>Upgrades</h2><br/>
                     <div class="row">
-                        <div class="col-md-4">
-                            <button onclick="Click()" class="btn btn-success">Cuisiner un canelé</button><p>Chaque click rapporte <span id="prodCan"></span> canelés.</p><br/>
+                        <div class="col-md-2">
+                            <button id="Ufour" onclick="BuyUFour();refreshBtn()" class="btn btn-info">Améliorer les fours (Production x2)</button>
+                            <p class="info">Prix : <span id="PrixUfour"></span> canelés</p><br/>
                         </div>
-
-                        <div class="col-md-4">
-                            <button id="Four" onclick="buyOven();refreshBtn()" class="btn btn-info">Acheter un four</button><p>+1 Canelé/Clic. Prix : <span id="PrixFour"></span> canelés</p><br/>
-                        </div>
-
-                        <div class="col-md-4">
-                            <button id="Employé" onclick="payEmployee();refreshBtn()" class="btn btn-info">Payer un employé</button><p>+1 Canelé/Seconde. Prix : <span id="PrixEmployé"></span> canelés</p><br/>
+                        
+                        <div class="col-md-2">
+                            <button id="Uemployé" onclick="BuyUEmployé();refreshBtn()" class="btn btn-info">Améliorer les employés (Production x2)</button>
+                            <p class="info">Prix : <span id="PrixUemployé"></span> canelés</p><br/>
                         </div>
                     </div>
-
                 </div>
             </div>
-        </div>
+
+
 
         <script language = "JavaScript" src="script.js"> </script>
 

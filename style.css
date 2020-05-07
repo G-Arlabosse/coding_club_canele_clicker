@@ -5,7 +5,7 @@ body {
 }
 
 .caneles{
-    background-color: black;
+    background-color: gray;
     width: 100%;
     min-height: 70%;
 }
@@ -17,7 +17,7 @@ body {
 }
 
 .upgrades{
-    background-color: white;
+    background-color: gray;
     width: 100%;
     min-height: 30%;
     margin-top: 2% ;
@@ -26,6 +26,10 @@ body {
 h1{
     font-family: "Pacifico", cursive;
     color: #5f021f
+}
+
+h2{
+    font-size: 2.5em;
 }
 
 span{
@@ -37,5 +41,17 @@ button{
 }
 
 .NombreCanelés{
+    font-size: 1.8em;
+}
+
+.info{
     font-size: 1.4em;
+}
+
+div{
+    width:100%;
+}
+
+img{
+    width:30%;
 }
