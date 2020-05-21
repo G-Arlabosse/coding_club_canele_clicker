@@ -1,5 +1,5 @@
 // ----- Déclaration des variables des fours -----
-var fours = 0;
+var four = 0;
 var prixFour = 25;
 var prixUFour = 200;
 var ShowPrixFour = document.getElementById("PrixFour");
@@ -26,13 +26,13 @@ btnUEmployé.disabled = true;
 ShowPrixEmployé.innerHTML=prixEmployé;
 ShowPrixUEmployé.innerHTML=prixUEmployé;
 // ----- Déclaration des variables des robots -----
-var robots = 0;
+var robot = 0;
 var prixRobot = 900;
 var prixURobot = 11000;
 var ShowPrixRobot = document.getElementById("PrixRobot");
 var ShowPrixURobot = document.getElementById("PrixURobot");
 var CPSrobot=7;
-var Urobot=1;
+var URobot=1;
 var btnRobot = document.getElementById("Robot");
 var btnURobot = document.getElementById("URobot");
 btnRobot.disabled = true;
@@ -44,72 +44,74 @@ var can = 0;
 var ShowCan = document.getElementById("nbCanelés");
 var CPC = document.getElementById("prodCan");
 var ShowCPS = document.getElementById("CPS");
-CPC.innerHTML=1+fours;
+CPC.innerHTML=1+four;
 
 
 
 function Click(){
-    can+=1+fours*UFour;
-    ShowCan.innerHTML=can;
+    can+=(1+four)*UFour;
+    ShowCan.innerHTML=Math.round(can);
     refreshBtn();
 }
 
-setInterval(Auto, 1000);
+setInterval(Auto, 100);
 function Auto(){
-    can+=employé*UEmployé;
-    ShowCan.innerHTML=can;
-    ShowCPS.innerHTML=employé*UEmployé;
+    can+=(employé*UEmployé+robot*7*URobot)/10;
+    ShowCan.innerHTML=Math.round(can);
     refreshBtn();
 }
 
 
 function buyOven(){
     can-=prixFour;
-    fours+=1;
+    four+=1;
     prixFour=Math.round(prixFour*1.3);
-    ShowCan.innerHTML=can;
+    ShowCan.innerHTML=Math.round(can);
     ShowPrixFour.innerHTML=prixFour;
-    CPC.innerHTML=1+fours*UFour;
+    CPC.innerHTML=(1+four)*UFour;
 }
 
 function payEmployee(){
     can-=prixEmployé;
     employé+=1;
     prixEmployé=Math.round(prixEmployé*1.15);
-    ShowCan.innerHTML=can;
+    ShowCan.innerHTML=Math.round(can);
     ShowPrixEmployé.innerHTML=prixEmployé;
+    ShowCPS.innerHTML=employé*UEmployé+robot*7*URobot;
 }
 
 function buyRobot(){
     can-=prixRobot;
     robot+=1;
     prixRobot=Math.round(prixRobot*1.15);
-    ShowCan.innerHTML=can;
+    ShowCan.innerHTML=Math.round(can);
     ShowPrixRobot.innerHTML=prixRobot;
+    ShowCPS.innerHTML=employé*UEmployé+robot*7*URobot;
 }
 
 function BuyUFour(){
     UFour*=2;
     can-=prixUFour;
     prixUFour=Math.round(prixUFour*8);
-    ShowCan.innerHTML=can;
+    ShowCan.innerHTML=Math.round(can);
     ShowPrixUFour.innerHTML=prixUFour;
-    CPC.innerHTML=1+fours*UFour;
+    CPC.innerHTML=(1+four)*UFour;
 }
 
 function BuyUEmployé(){
     UEmployé*=2;
     can-=prixUEmployé;
     prixUEmployé=Math.round(prixUEmployé*8);
-    ShowCan.innerHTML=can;
+    ShowCan.innerHTML=Math.round(can);
     ShowPrixUEmployé.innerHTML=prixUEmployé;
+    ShowCPS.innerHTML=employé*UEmployé+robot*7*URobot;
 }
 
-function BuyUEmployé(){
+function BuyURobot(){
     URobot*=2;
     can-=prixURobot;
     prixURobot=Math.round(prixURobot*8);
-    ShowCan.innerHTML=can;
+    ShowCan.innerHTML=cMath.round(can);
     ShowPrixURobot.innerHTML=prixURobot;
 }
 

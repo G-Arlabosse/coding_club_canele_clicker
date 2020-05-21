@@ -5,19 +5,19 @@ body {
 }
 
 .caneles{
-    background-color: gray;
+    background-color: rgb(160, 160, 160);
     width: 100%;
     min-height: 70%;
 }
 
 .buildings{
-    background-color: gray;
+    background-color: rgb(160, 160, 160);
     width: 100%;
     min-height: 100%;
 }
 
 .upgrades{
-    background-color: gray;
+    background-color: rgb(160, 160, 160);
     width: 100%;
     min-height: 30%;
     margin-top: 2% ;
