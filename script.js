@@ -14,10 +14,9 @@ ShowPrixUFour.innerHTML=prixUFour;
 // ----- Déclaration des variables des employés -----
 var employé = 0;
 var prixEmployé = 100;
-var prixUEmployé = 1000;
+var prixUEmployé = 800;
 var ShowPrixEmployé = document.getElementById("PrixEmployé");
 var ShowPrixUEmployé = document.getElementById("PrixUEmployé");
-var CPSemployé=1;
 var UEmployé=1;
 var btnEmployé = document.getElementById("Employé");
 var btnUEmployé = document.getElementById("UEmployé");
@@ -28,10 +27,9 @@ ShowPrixUEmployé.innerHTML=prixUEmployé;
 // ----- Déclaration des variables des robots -----
 var robot = 0;
 var prixRobot = 900;
-var prixURobot = 11000;
+var prixURobot = 7200;
 var ShowPrixRobot = document.getElementById("PrixRobot");
 var ShowPrixURobot = document.getElementById("PrixURobot");
-var CPSrobot=7;
 var URobot=1;
 var btnRobot = document.getElementById("Robot");
 var btnURobot = document.getElementById("URobot");
@@ -39,6 +37,32 @@ btnRobot.disabled = true;
 btnURobot.disabled = true;
 ShowPrixRobot.innerHTML=prixRobot;
 ShowPrixURobot.innerHTML=prixURobot;
+// ----- Déclaration des variables des jardins -----
+var garden = 0;
+var prixGarden = 8000;
+var prixUGarden = 64000;
+var ShowPrixGarden = document.getElementById("PrixGarden");
+var ShowPrixUGarden = document.getElementById("PrixUGarden");
+var UGarden=1;
+var btnGarden = document.getElementById("Garden");
+var btnUGarden = document.getElementById("UGarden");
+btnGarden.disabled = true;
+btnUGarden.disabled = true;
+ShowPrixGarden.innerHTML=prixGarden;
+ShowPrixUGarden.innerHTML=prixUGarden;
+// ----- Déclaration des variables des laboratoires -----
+var labo = 0;
+var prixLabo = 47000;
+var prixULabo = 376000;
+var ShowPrixLabo = document.getElementById("PrixLabo");
+var ShowPrixULabo = document.getElementById("PrixULabo");
+var ULabo=1;
+var btnLabo = document.getElementById("Labo");
+var btnULabo = document.getElementById("ULabo");
+btnLabo.disabled = true;
+btnULabo.disabled = true;
+ShowPrixLabo.innerHTML=prixLabo;
+ShowPrixULabo.innerHTML=prixULabo;
 // ----- Déclaration des autres variable du jeu -----
 var can = 0;
 var ShowCan = document.getElementById("nbCanelés");
@@ -47,16 +71,15 @@ var ShowCPS = document.getElementById("CPS");
 CPC.innerHTML=1+four;
 
 
-
 function Click(){
     can+=(1+four)*UFour;
     ShowCan.innerHTML=Math.round(can);
     refreshBtn();
 }
 
-setInterval(Auto, 100);
+setInterval(Auto, 50);
 function Auto(){
-    can+=(employé*UEmployé+robot*7*URobot)/10;
+    can+=(employé*UEmployé+robot*7*URobot+garden*45*UGarden+labo*260*ULabo)/20;
     ShowCan.innerHTML=Math.round(can);
     refreshBtn();
 }
@@ -77,7 +100,7 @@ function payEmployee(){
     prixEmployé=Math.round(prixEmployé*1.15);
     ShowCan.innerHTML=Math.round(can);
     ShowPrixEmployé.innerHTML=prixEmployé;
-    ShowCPS.innerHTML=employé*UEmployé+robot*7*URobot;
+    ShowCPS.innerHTML=employé*UEmployé+robot*7*URobot+garden*45*UGarden+labo*260*ULabo;
 }
 
 function buyRobot(){
@@ -86,7 +109,25 @@ function buyRobot(){
     prixRobot=Math.round(prixRobot*1.15);
     ShowCan.innerHTML=Math.round(can);
     ShowPrixRobot.innerHTML=prixRobot;
-    ShowCPS.innerHTML=employé*UEmployé+robot*7*URobot;
+    ShowCPS.innerHTML=employé*UEmployé+robot*7*URobot+garden*45*UGarden+labo*260*ULabo;
+}
+
+function buyGarden(){
+    can-=prixGarden;
+    garden+=1;
+    prixGarden=Math.round(prixGarden*1.15);
+    ShowCan.innerHTML=Math.round(can);
+    ShowPrixGarden.innerHTML=prixGarden;
+    ShowCPS.innerHTML=employé*UEmployé+robot*7*URobot+garden*45*UGarden+labo*260*ULabo;
+}
+
+function buyLabo(){
+    can-=prixLabo;
+    labo+=1;
+    prixLabo=Math.round(prixLabo*1.15);
+    ShowCan.innerHTML=Math.round(can);
+    ShowPrixLabo.innerHTML=prixLabo;
+    ShowCPS.innerHTML=employé*UEmployé+robot*7*URobot+garden*45*UGarden+labo*260*ULabo;
 }
 
 function BuyUFour(){
@@ -104,15 +145,34 @@ function BuyUEmployé(){
     prixUEmployé=Math.round(prixUEmployé*8);
     ShowCan.innerHTML=Math.round(can);
     ShowPrixUEmployé.innerHTML=prixUEmployé;
-    ShowCPS.innerHTML=employé*UEmployé+robot*7*URobot;
+    ShowCPS.innerHTML=employé*UEmployé+robot*7*URobot+garden*45*UGarden+labo*260*ULabo;
 }
 
 function BuyURobot(){
     URobot*=2;
     can-=prixURobot;
     prixURobot=Math.round(prixURobot*8);
-    ShowCan.innerHTML=cMath.round(can);
+    ShowCan.innerHTML=Math.round(can);
     ShowPrixURobot.innerHTML=prixURobot;
+    ShowCPS.innerHTML=employé*UEmployé+robot*7*URobot+garden*45*UGarden+labo*260*ULabo;
+}
+
+function BuyUGarden(){
+    UGarden*=2;
+    can-=prixUGarden;
+    prixUGarden=Math.round(prixUGarden*8);
+    ShowCan.innerHTML=Math.round(can);
+    ShowPrixUGarden.innerHTML=prixUGarden;
+    ShowCPS.innerHTML=employé*UEmployé+robot*7*URobot+garden*45*UGarden+labo*260*ULabo;
+}
+
+function BuyULabo(){
+    ULabo*=2;
+    can-=prixULabo;
+    prixULabo=Math.round(prixULabo*8);
+    ShowCan.innerHTML=Math.round(can);
+    ShowPrixULabo.innerHTML=prixULabo;
+    ShowCPS.innerHTML=employé*UEmployé+robot*7*URobot+garden*45*UGarden+labo*260*ULabo;
 }
 
 function refreshBtn(){
@@ -134,6 +194,20 @@ function refreshBtn(){
     else{
         btnRobot.disabled = false;
     }
+    if (can<prixGarden){
+        btnGarden.disabled = true;
+    }
+    else{
+        btnGarden.disabled = false;
+    }
+    if (can<prixLabo){
+        btnLabo.disabled = true;
+    }
+    else{
+        btnLabo.disabled = false;
+    }
+
+
     if (can<prixUFour){
         btnUFour.disabled = true;
     }
@@ -151,5 +225,17 @@ function refreshBtn(){
     }
     else{
         btnURobot.disabled = false;
+    }
+    if (can<prixUGarden){
+        btnUGarden.disabled = true;
+    }
+    else{
+        btnUGarden.disabled = false;
+    }
+    if (can<prixULabo){
+        btnULabo.disabled = true;
+    }
+    else{
+        btnULabo.disabled = false;
     }
 }
