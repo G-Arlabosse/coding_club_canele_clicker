@@ -84,7 +84,6 @@ function Auto(){
     refreshBtn();
 }
 
-
 function buyOven(){
     can-=prixFour;
     four+=1;
