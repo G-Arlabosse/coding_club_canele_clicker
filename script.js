@@ -63,8 +63,22 @@ btnLabo.disabled = true;
 btnULabo.disabled = true;
 ShowPrixLabo.innerHTML=prixLabo;
 ShowPrixULabo.innerHTML=prixULabo;
+// ----- Déclaration des variables des AutoClickers -----
+var autoClicker = 0;
+var prixAutoClicker = 250;
+var prixUAutoClicker = 10000;
+var ShowPrixAutoClicker = document.getElementById("PrixAutoClicker");
+var ShowPrixUAutoClicker = document.getElementById("PrixUAutoClicker");
+var UAutoClicker=1;
+var btnAutoClicker = document.getElementById("AutoClicker");
+var btnUAutoClicker = document.getElementById("UAutoClicker");
+btnAutoClicker.disabled = true;
+btnUAutoClicker.disabled = true;
+ShowPrixAutoClicker.innerHTML=prixAutoClicker;
+ShowPrixUAutoClicker.innerHTML=prixUAutoClicker;
+frequency = 10000
 // ----- Déclaration des autres variable du jeu -----
-var can = 0;
+var can = 10000;
 var ShowCan = document.getElementById("nbCanelés");
 var CPC = document.getElementById("prodCan");
 var ShowCPS = document.getElementById("CPS");
@@ -84,6 +98,13 @@ function Auto(){
     refreshBtn();
 }
 
+setInterval(AutoClick, 1000);
+function AutoClick(){
+    can+=(autoClicker/(frequency/1000))*((1+four)*UFour);
+    ShowCan.innerHTML=Math.round(can);
+    refreshBtn();
+}
+
 function buyOven(){
     can-=prixFour;
     four+=1;
@@ -91,6 +112,7 @@ function buyOven(){
     ShowCan.innerHTML=Math.round(can);
     ShowPrixFour.innerHTML=prixFour;
     CPC.innerHTML=(1+four)*UFour;
+    refreshBtn();
 }
 
 function payEmployee(){
@@ -99,7 +121,8 @@ function payEmployee(){
     prixEmployé=Math.round(prixEmployé*1.15);
     ShowCan.innerHTML=Math.round(can);
     ShowPrixEmployé.innerHTML=prixEmployé;
-    ShowCPS.innerHTML=employé*UEmployé+robot*7*URobot+garden*45*UGarden+labo*260*ULabo;
+    ShowCPS.innerHTML=Math.round(employé*UEmployé+robot*7*URobot+garden*45*UGarden+labo*260*ULabo+autoClicker*0.1*((1+four)*UFour)*UAutoClicker);
+    refreshBtn();
 }
 
 function buyRobot(){
@@ -108,7 +131,8 @@ function buyRobot(){
     prixRobot=Math.round(prixRobot*1.15);
     ShowCan.innerHTML=Math.round(can);
     ShowPrixRobot.innerHTML=prixRobot;
-    ShowCPS.innerHTML=employé*UEmployé+robot*7*URobot+garden*45*UGarden+labo*260*ULabo;
+    ShowCPS.innerHTML=Math.round(employé*UEmployé+robot*7*URobot+garden*45*UGarden+labo*260*ULabo+autoClicker*0.1*((1+four)*UFour)*UAutoClicker);
+    refreshBtn();
 }
 
 function buyGarden(){
@@ -117,7 +141,8 @@ function buyGarden(){
     prixGarden=Math.round(prixGarden*1.15);
     ShowCan.innerHTML=Math.round(can);
     ShowPrixGarden.innerHTML=prixGarden;
-    ShowCPS.innerHTML=employé*UEmployé+robot*7*URobot+garden*45*UGarden+labo*260*ULabo;
+    ShowCPS.innerHTML=Math.round(employé*UEmployé+robot*7*URobot+garden*45*UGarden+labo*260*ULabo+autoClicker*0.1*((1+four)*UFour)*UAutoClicker);
+    refreshBtn();
 }
 
 function buyLabo(){
@@ -126,7 +151,8 @@ function buyLabo(){
     prixLabo=Math.round(prixLabo*1.15);
     ShowCan.innerHTML=Math.round(can);
     ShowPrixLabo.innerHTML=prixLabo;
-    ShowCPS.innerHTML=employé*UEmployé+robot*7*URobot+garden*45*UGarden+labo*260*ULabo;
+    ShowCPS.innerHTML=Math.round(employé*UEmployé+robot*7*URobot+garden*45*UGarden+labo*260*ULabo+autoClicker*0.1*((1+four)*UFour)*UAutoClicker);
+    refreshBtn();
 }
 
 function BuyUFour(){
@@ -136,6 +162,7 @@ function BuyUFour(){
     ShowCan.innerHTML=Math.round(can);
     ShowPrixUFour.innerHTML=prixUFour;
     CPC.innerHTML=(1+four)*UFour;
+    refreshBtn();
 }
 
 function BuyUEmployé(){
@@ -144,7 +171,8 @@ function BuyUEmployé(){
     prixUEmployé=Math.round(prixUEmployé*8);
     ShowCan.innerHTML=Math.round(can);
     ShowPrixUEmployé.innerHTML=prixUEmployé;
-    ShowCPS.innerHTML=employé*UEmployé+robot*7*URobot+garden*45*UGarden+labo*260*ULabo;
+    ShowCPS.innerHTML=Math.round(employé*UEmployé+robot*7*URobot+garden*45*UGarden+labo*260*ULabo+autoClicker*0.1*((1+four)*UFour)*UAutoClicker);
+    refreshBtn();
 }
 
 function BuyURobot(){
@@ -153,7 +181,8 @@ function BuyURobot(){
     prixURobot=Math.round(prixURobot*8);
     ShowCan.innerHTML=Math.round(can);
     ShowPrixURobot.innerHTML=prixURobot;
-    ShowCPS.innerHTML=employé*UEmployé+robot*7*URobot+garden*45*UGarden+labo*260*ULabo;
+    ShowCPS.innerHTML=Math.round(employé*UEmployé+robot*7*URobot+garden*45*UGarden+labo*260*ULabo+autoClicker*0.1*((1+four)*UFour)*UAutoClicker);
+    refreshBtn();
 }
 
 function BuyUGarden(){
@@ -162,7 +191,8 @@ function BuyUGarden(){
     prixUGarden=Math.round(prixUGarden*8);
     ShowCan.innerHTML=Math.round(can);
     ShowPrixUGarden.innerHTML=prixUGarden;
-    ShowCPS.innerHTML=employé*UEmployé+robot*7*URobot+garden*45*UGarden+labo*260*ULabo;
+    ShowCPS.innerHTML=Math.round(employé*UEmployé+robot*7*URobot+garden*45*UGarden+labo*260*ULabo+autoClicker*0.1*((1+four)*UFour)*UAutoClicker);
+    refreshBtn();
 }
 
 function BuyULabo(){
@@ -171,8 +201,28 @@ function BuyULabo(){
     prixULabo=Math.round(prixULabo*8);
     ShowCan.innerHTML=Math.round(can);
     ShowPrixULabo.innerHTML=prixULabo;
-    ShowCPS.innerHTML=employé*UEmployé+robot*7*URobot+garden*45*UGarden+labo*260*ULabo;
+    ShowCPS.innerHTML=Math.round(employé*UEmployé+robot*7*URobot+garden*45*UGarden+labo*260*ULabo+autoClicker*0.1*((1+four)*UFour)*UAutoClicker);
+    refreshBtn();
 }
+
+function buyAutoClicker(){
+    can-=prixAutoClicker;
+    autoClicker+=1;
+    ShowCan.innerHTML=Math.round(can);
+    ShowPrixAutoClicker.innerHTML=prixAutoClicker;
+    ShowCPS.innerHTML=Math.round(employé*UEmployé+robot*7*URobot+garden*45*UGarden+labo*260*ULabo+autoClicker*0.1*((1+four)*UFour)*UAutoClicker);
+    refreshBtn();
+}
+
+function BuyUAutoClicker(){
+    frequency/=2;
+    can-=prixUAutoClicker;
+    ShowCan.innerHTML=Math.round(can);
+    ShowPrixUAutoClicker.innerHTML=prixUAutoClicker;
+    ShowCPS.innerHTML=Math.round(employé*UEmployé+robot*7*URobot+garden*45*UGarden+labo*260*ULabo+autoClicker*0.1*((1+four)*UFour)*UAutoClicker);
+    refreshBtn();
+}
+
 
 function refreshBtn(){
     if (can<prixFour){
@@ -205,6 +255,17 @@ function refreshBtn(){
     else{
         btnLabo.disabled = false;
     }
+    prixAutoClicker = Math.round(150*(employé*UEmployé+robot*7*URobot+garden*45*UGarden+labo*260*ULabo+autoClicker*0.1*((1+four)*UFour)*UAutoClicker));
+    if (prixAutoClicker<500){
+        prixAutoClicker = 500;
+    }
+    ShowPrixAutoClicker.innerHTML=prixAutoClicker;
+    if (can<prixAutoClicker){
+        btnAutoClicker.disabled = true;
+    }
+    else{
+        btnAutoClicker.disabled = false;
+    }
 
 
     if (can<prixUFour){
@@ -236,5 +297,16 @@ function refreshBtn(){
     }
     else{
         btnULabo.disabled = false;
+    }
+    prixUAutoClicker = Math.round(1200*(employé*UEmployé+robot*7*URobot+garden*45*UGarden+labo*260*ULabo+autoClicker*0.1*((1+four)*UFour)*UAutoClicker));
+    if (prixUAutoClicker<10000){
+        prixUAutoClicker = 10000;
+    }
+    ShowPrixUAutoClicker.innerHTML=prixUAutoClicker;
+    if (can<prixUAutoClicker){
+        btnUAutoClicker.disabled = true;
+    }
+    else{
+        btnUAutoClicker.disabled = false;
     }
 }

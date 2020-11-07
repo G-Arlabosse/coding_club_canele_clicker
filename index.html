@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="caneles">
-                        <h2>Caneles</h2>
+                        <h2>Canelés</h2>
                         <p class="NombreCanelés">Vous avez <span id="nbCanelés">0</span> canelés</p><br/>         
                         <div class="row">
                             <div class="col-md-6">
@@ -31,31 +31,35 @@
                 </div>
                 <div class="col-md-6">
                     <div class="buildings">
-                        <h2>Buildings</h2><br/>
+                        <h2>Bâtiments</h2><br/>
                         <div class="row">
                             <div class="col-md-6">
                                 <button id="Four" onclick="buyOven();refreshBtn()" class="btn btn-info">Acheter un four</button>
                                 <p class="info">Prix : <span id="PrixFour"></span> canelés</p><br/>
                             </div>
+                            <div class="col-md-6">
+                                <button id="AutoClicker" onclick="buyAutoClicker();refreshBtn()" class="btn btn-info">Acheter un auto-clicker</button>
+                                <p class="info">Prix : <span id="PrixAutoClicker"></span> canelés</p><br/>
+                            </div>
+                        </div>
+
+                        <div class="row">
             
                             <div class="col-md-6">
                                 <button id="Employé" onclick="payEmployee();refreshBtn()" class="btn btn-info">Payer un employé</button>
                                 <p class="info">Prix : <span id="PrixEmployé"></span> canelés</p><br/>
                             </div>
-                        </div>
-
-                        <div class="row">
                             <div class="col-md-6">
                                 <button id="Robot" onclick="buyRobot();refreshBtn()" class="btn btn-info">Acheter un robot</button>
                                 <p class="info">Prix : <span id="PrixRobot"></span> canelés</p><br/>
                             </div>
+                        </div>
+
+                        <div class="row">
                             <div class="col-md-6">
                                 <button id="Garden" onclick="buyGarden();refreshBtn()" class="btn btn-info">Acheter un jardin</button>
                                 <p class="info">Prix : <span id="PrixGarden"></span> canelés</p><br/>
                             </div>
-                        </div>
-
-                        <div class="row">
                             <div class="col-md-6">
                                 <button id="Labo" onclick="buyLabo();refreshBtn()" class="btn btn-info">Acheter un labo</button>
                                 <p class="info">Prix : <span id="PrixLabo"></span> canelés</p><br/>
@@ -66,11 +70,16 @@
             </div>
             <div class="row">
                 <div class="upgrades">
-                    <h2>Upgrades</h2><br/>
+                    <h2>Améliorations</h2><br/>
                     <div class="row">
                         <div class="col-md-2">
                             <button id="UFour" onclick="BuyUFour();refreshBtn()" class="btn btn-info">Améliorer les fours (Production x2)</button>
                             <p class="info">Prix : <span id="PrixUFour"></span> canelés</p><br/>
+                        </div>
+
+                        <div class="col-md-2">
+                            <button id="UAutoClicker" onclick="BuyUAutoClicker();refreshBtn()" class="btn btn-info">Améliorer les auto-clickers (Fréquence x2)</button>
+                            <p class="info">Prix : <span id="PrixUAutoClicker"></span> canelés</p><br/>
                         </div>
                         
                         <div class="col-md-2">

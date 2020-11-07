@@ -1,7 +1,7 @@
 body {
     background-image:url(images/Background.png);
     background-size: cover;
-    font-family: "Neucha", cursive ;
+    font-family: "Comic Sans MS", cursive ;
     text-align: center;
 }
 
@@ -39,7 +39,7 @@ span{
 }
 
 button{
-    font-family: "Neucha", cursive;
+    font-family: "Comic Sans MS", cursive;
 }
 
 .NombreCanelés{
